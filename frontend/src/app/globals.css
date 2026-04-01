@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Ensure minimum readable font size across all devices */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scale up slightly on very large screens */
+@media (min-width: 1920px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

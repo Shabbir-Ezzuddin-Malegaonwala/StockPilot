@@ -1,0 +1,26 @@
+{
+  "name": "stockpilot-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "elysia": "latest",
+    "drizzle-orm": "latest",
+    "pg": "latest",
+    "better-auth": "latest",
+    "zod": "latest",
+    "@elysiajs/cors": "latest"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.11",
+    "@types/pg": "latest",
+    "drizzle-kit": "latest",
+    "typescript": "^6.0.2"
+  }
+}
