@@ -6,6 +6,8 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
+const isProduction = process.env.BETTER_AUTH_URL?.startsWith("https://");
+
 export const auth = betterAuth({
   database: pool,
   secret: process.env.BETTER_AUTH_SECRET,
@@ -13,6 +15,15 @@ export const auth = betterAuth({
   trustedOrigins: [process.env.FRONTEND_URL || "http://localhost:3000"],
   emailAndPassword: {
     enabled: true,
+  },
+  advanced: {
+    crossSubDomainCookies: {
+      enabled: isProduction,
+    },
+    defaultCookieAttributes: {
+      sameSite: isProduction ? "none" : "lax",
+      secure: isProduction,
+    },
   },
   plugins: [
     organization(),
