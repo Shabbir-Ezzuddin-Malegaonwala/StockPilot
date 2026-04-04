@@ -1,10 +1,6 @@
 import { betterAuth } from "better-auth";
 import { organization } from "better-auth/plugins";
-import { Pool } from "pg";
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
+import { pool } from "../db";
 
 const isProduction = process.env.BETTER_AUTH_URL?.startsWith("https://");
 
